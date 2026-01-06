@@ -1,0 +1,150 @@
+<!-- contact.html -->
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Επικοινωνία | Bordeaux Beauty</title>
+  <meta name="description" content="Επικοινώνησε με το Bordeaux Beauty και κλείσε ραντεβού εύκολα.">
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+<header class="header">
+  <div class="container header__inner">
+
+    <a href="index.html" class="logo">
+      <img src="logo.png" alt="Bordeaux Beauty Logo">
+    </a>
+
+    <nav class="nav" id="navMenu">
+      <a href="index.html" class="nav__link">Home</a>
+      <a href="services.html" class="nav__link">Υπηρεσίες</a>
+      <a href="contact.html" class="nav__link is-active">Επικοινωνία</a>
+    </nav>
+
+    <button class="burger" id="burger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <a href="contact.html" class="btn btn--primary header__cta">
+      Κλείσε ραντεβού
+    </a>
+
+  </div>
+</header>
+
+<div class="nav-overlay" id="navOverlay"></div>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero__inner">
+
+      <div>
+        <h1>Επικοινωνία</h1>
+        <p class="hero__subtitle">
+          Κλείσε το ραντεβού σου εύκολα ή στείλε μας μήνυμα.
+        </p>
+
+        <ul class="hero__badges">
+          <li>Γρήγορη απάντηση</li>
+          <li>Ραντεβού στην ώρα τους</li>
+          <li>Premium υπηρεσίες</li>
+        </ul>
+      </div>
+
+      <div class="hero__logo-box">
+        <img src="logo.png" alt="Bordeaux Beauty">
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section section--alt">
+    <div class="container grid grid--3">
+
+      <!-- INFO -->
+      <div class="card">
+        <h3>Στοιχεία επικοινωνίας</h3>
+        <p><strong>Τηλέφωνο:</strong> 6973563253</p>
+        <p><strong>Instagram:</strong> @bordeauxbeauty</p>
+        <p><strong>Περιοχή:</strong> Πειραιάς</p>
+        <p><strong>Ωράριο:</strong> Κατόπιν ραντεβού</p>
+      </div>
+
+      <!-- FORM -->
+      <div class="card" style="grid-column: span 2;">
+        <h3>Κλείσε ραντεβού</h3>
+
+        <form class="contact-form" id="bookingForm">
+
+          <input id="name" type="text" placeholder="Ονοματεπώνυμο" required>
+          <input id="phone" type="tel" placeholder="Τηλέφωνο" required>
+
+          <select id="service" required>
+            <option value="">Επιλογή υπηρεσίας</option>
+            <option>Manicure</option>
+            <option>Pedicure</option>
+            <option>Nail Art</option>
+            <option>Builder Gel</option>
+          </select>
+
+          <!-- DATE + TIME -->
+          <div class="form-row">
+            <input id="date" type="date" required>
+
+            <select id="time" required>
+              <option value="">Ώρα</option>
+              <option>10:00</option>
+              <option>11:00</option>
+              <option>12:00</option>
+              <option>13:00</option>
+              <option>14:00</option>
+              <option>15:00</option>
+              <option>16:00</option>
+              <option>17:00</option>
+              <option>18:00</option>
+              <option>19:00</option>
+              <option>20:00</option>
+            </select>
+          </div>
+
+          <textarea id="message" rows="4" placeholder="Μήνυμα (προαιρετικό)"></textarea>
+
+          <button type="submit" class="btn btn--primary">
+            Αποστολή
+          </button>
+        </form>
+
+        <!-- SUCCESS MESSAGE -->
+        <div class="success-message" id="successMessage">
+          <h3>✅ Το ραντεβού καταχωρήθηκε!</h3>
+          <p>Θα επικοινωνήσουμε μαζί σας σύντομα για επιβεβαίωση.</p>
+
+          <!-- ✅ ADDED: SUCCESS ACTIONS (WhatsApp + New booking) -->
+          <div class="success-actions" id="successActions">
+            <button type="button" class="btn btn--primary" id="openWhatsAppBtn">Άνοιγμα WhatsApp</button>
+            <button class="btn btn--primary new-booking-btn">Νέα κράτηση</button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container footer__inner">
+    <p>© 2026 Bordeaux Beauty. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
