@@ -1,4 +1,4 @@
-<!-- contact.html -->
+
 <!DOCTYPE html>
 <html lang="el">
 <head>
@@ -38,8 +38,6 @@
 <div class="nav-overlay" id="navOverlay"></div>
 
 <main>
-
-  <!-- HERO -->
   <section class="hero">
     <div class="container hero__inner">
 
@@ -63,11 +61,8 @@
     </div>
   </section>
 
-  <!-- CONTACT -->
   <section class="section section--alt">
     <div class="container grid grid--3">
-
-      <!-- INFO -->
       <div class="card">
         <h3>Στοιχεία επικοινωνίας</h3>
         <p><strong>Τηλέφωνο:</strong> 6973563253</p>
@@ -75,8 +70,6 @@
         <p><strong>Περιοχή:</strong> Πειραιάς</p>
         <p><strong>Ωράριο:</strong> Κατόπιν ραντεβού</p>
       </div>
-
-      <!-- FORM -->
       <div class="card" style="grid-column: span 2;">
         <h3>Κλείσε ραντεβού</h3>
 
@@ -93,7 +86,7 @@
             <option>Builder Gel</option>
           </select>
 
-          <!-- DATE + TIME -->
+          
           <div class="form-row">
             <input id="date" type="date" required>
 
@@ -120,15 +113,16 @@
           </button>
         </form>
 
-        <!-- SUCCESS MESSAGE -->
         <div class="success-message" id="successMessage">
           <h3>✅ Το ραντεβού καταχωρήθηκε!</h3>
           <p>Θα επικοινωνήσουμε μαζί σας σύντομα για επιβεβαίωση.</p>
 
-          <!-- ✅ ADDED: SUCCESS ACTIONS (WhatsApp + New booking) -->
+          
           <div class="success-actions" id="successActions">
             <button type="button" class="btn btn--primary" id="openWhatsAppBtn">Άνοιγμα WhatsApp</button>
-            <button class="btn btn--primary new-booking-btn">Νέα κράτηση</button>
+          <button type="button" class="btn btn--primary" id="newBookingBtn">
+  Νέα κράτηση
+</button>
           </div>
         </div>
 

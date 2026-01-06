@@ -391,6 +391,10 @@ img{ display:block; max-width:100%; }
   transform: translateY(-2px);
   filter: brightness(1.05);
 }
+ .btn--secondary{
+  background: linear-gradient(135deg, #6d1436, #4b0c26);
+}
+
 
 @media (max-width: 1024px){
   .hero__inner{

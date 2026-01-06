@@ -1,8 +1,4 @@
-/* main.js (FULL) */
 
-// -----------------------------
-// BURGER MENU
-// -----------------------------
 const burger = document.getElementById("burger");
 const navMenu = document.getElementById("navMenu");
 const navOverlay = document.getElementById("navOverlay");
@@ -46,18 +42,14 @@ if (navMenu) {
   });
 }
 
-// -----------------------------
-// BOOKING FORM (CONTACT)
-// -----------------------------
+
 const bookingForm = document.getElementById("bookingForm");
 const successMessage = document.getElementById("successMessage");
 
-// ✅ ADDED: buttons inside success box
 const openWhatsAppBtn = document.getElementById("openWhatsAppBtn");
 const newBookingBtn = document.getElementById("newBookingBtn");
 
-const API_URL = "http://localhost:3000/book"; // change later when you deploy backend
-
+const API_URL = "http://localhost:3000/book"; 
 const buildWhatsAppText = ({ name, phone, service, date, time, message }) => {
   const lines = [
     "Γεια σας! Θα ήθελα να κλείσω ραντεβού 💅",
@@ -68,6 +60,25 @@ const buildWhatsAppText = ({ name, phone, service, date, time, message }) => {
     `Ώρα: ${time}`,
   ];
 
+  if (newBookingBtn) {
+  newBookingBtn.addEventListener("click", () => {
+    
+    bookingForm.reset();
+
+   
+    successMessage.style.display = "none";
+
+  
+    const timeSelect = document.getElementById("time");
+    if (timeSelect) {
+      [...timeSelect.options].forEach(opt => (opt.disabled = false));
+      timeSelect.value = "";
+    }
+
+    bookingForm.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+}
+
   if (message && message.trim()) {
     lines.push(`Μήνυμα: ${message.trim()}`);
   }
@@ -76,7 +87,7 @@ const buildWhatsAppText = ({ name, phone, service, date, time, message }) => {
 };
 
 const openWhatsApp = (prefilledText) => {
-  const salonPhone = "306973563253"; // +30 697 356 3253 (digits only)
+  const salonPhone = "306973563253"; 
   const url = `https://wa.me/${salonPhone}?text=${encodeURIComponent(prefilledText)}`;
   window.open(url, "_blank");
 };
@@ -123,16 +134,14 @@ if (bookingForm) {
         return;
       }
 
-      // success
       showSuccess();
 
-      // prepare WhatsApp message for the button
       const waText = buildWhatsAppText(payload);
       if (openWhatsAppBtn) {
         openWhatsAppBtn.onclick = () => openWhatsApp(waText);
       }
 
-      // reset form after success (so user can book again if they click "New booking")
+     
       bookingForm.reset();
       bookingForm.scrollIntoView({ behavior: "smooth", block: "start" });
     } catch (err) {
@@ -142,7 +151,6 @@ if (bookingForm) {
   });
 }
 
-// ✅ ADDED: New booking button behavior
 if (newBookingBtn && bookingForm) {
   newBookingBtn.addEventListener("click", () => {
     bookingForm.reset();
@@ -151,11 +159,9 @@ if (newBookingBtn && bookingForm) {
   });
 }
 
-// ✅ OPTIONAL: WhatsApp button fallback (in case user clicks it without a recent booking)
 if (openWhatsAppBtn) {
   openWhatsAppBtn.addEventListener("click", () => {
-    // If onclick was already set after booking, this won't matter.
-    // This is just a fallback to avoid "dead" button.
+  
     if (!openWhatsAppBtn.onclick) {
       alert("Κάνε πρώτα μια κράτηση για να δημιουργηθεί το μήνυμα WhatsApp 🙂");
     }
